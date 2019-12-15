@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "listener.hpp"
+#include "web_socket_server.hpp"
 
 int main(int argc, char ** argv){
 	if (argc < 3){
@@ -14,6 +15,10 @@ int main(int argc, char ** argv){
 	boost::asio::io_context ioc;
 	auto address = boost::asio::ip::make_address(argv[1]);
 	auto port = static_cast<unsigned short>(std::atoi(argv[2]));
+
+	if (argc >= 4){
+		wsserv::data_path = argv[3];
+	}
 
 	std::make_shared<listener>(
 			ioc,

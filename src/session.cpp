@@ -4,6 +4,7 @@
 #include <boost/asio/ip/address.hpp>
 #include <boost/system/error_code.hpp>
 #include "utils.hpp"
+#include "web_socket_server.hpp"
 
 using tcp = boost::asio::ip::tcp;
 using error_code = boost::system::error_code;
@@ -70,7 +71,7 @@ void session::on_ws_read(error_code ec, size_t){
 	std::string str = beast::buffers_to_string(buffer.data());
 	buffer.consume(buffer.size());
 
-	ws_sess->ws.async_write(boost::asio::buffer(str),
+	ws_sess->ws.async_write(boost::asio::buffer(wsserv::responce_for_request(str)),
 			[self = shared_from_this()] (error_code ec, size_t bytes){
 				self->on_ws_write(ec,bytes);
 				});

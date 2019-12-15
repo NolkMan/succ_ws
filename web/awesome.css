@@ -1,7 +1,35 @@
-pre {
-	margin-bottom: 5px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 1px;
-	border: solid 2px #00ff00;
+html {
+	height: 100%;
+	margin: 0px;
 }
+body {
+	margin: 0px;
+	height: 100%;
+	background-color: #ffad33;
+	display: flex;
+	flex-flow: column;
+}
+#button-banner {
+	text-align: center;
+	background-color: #ff9900;
+	padding: 8px;
+	flex: 0 1 auto;
+
+}
+#page {
+	margin: 0px;
+	flex: 1 1 auto;
+}
+button {
+	color: #990000;
+	background-image: linear-gradient(to bottom right, 
+	#ff8533, #ff5c33);
+	background-color: #ff0000;
+	height: 30px;
+	width: 150px;
+	border: none;
+}
+p {
+	color: #b35900;
+}
+
