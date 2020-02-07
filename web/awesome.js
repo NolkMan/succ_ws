@@ -1,5 +1,5 @@
 window.onload = function(){
-	var ws = new WebSocket("ws://0.0.0.0:1337")
+	var ws = new WebSocket("ws://" + location.hostname + ":10327")
 
 	ws.onopen = function (ev) {
 		ws.send("home")

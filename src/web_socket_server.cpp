@@ -21,7 +21,7 @@ std::string wsserv::responce_for_request(std::string request){
 	if (request == "more"){
 		return get_file("more.html");
 	}
-	if (request == "flag"){
+	if (request == "flag" || request == "flag.txt" ){
 		return get_file("flag.txt");
 	}
 

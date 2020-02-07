@@ -1,0 +1,10 @@
+version: '3'
+services:
+  tangerine_website:
+    build: .
+    ports:
+      - "10326:80"
+# watch out for changing this v the web socket will be connecting to this port
+# if you want to change this change also port in the web/awesome.js
+      - "10327:1337"
+    restart: always
